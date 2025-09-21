@@ -4,7 +4,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import model.*;
 import service.*;
 import view.*;
-
 import javax.swing.*;
 
 /**
