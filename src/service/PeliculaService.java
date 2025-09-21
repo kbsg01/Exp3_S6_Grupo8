@@ -33,7 +33,7 @@ public class PeliculaService {
      * 
      * Validaciones implementadas:
      * -Título no nulo y no vacío
-     * - Directo no nulo y no vacío
+     * - Director no nulo y no vacío
      * - Año dentro de rango válido (1900 - año actual +1)
      * - Duración dentro de rango válido (1-999 minutos)
      * - Prevención de duplicados (título + año)
