@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * 
  * Responsabilidades:
  * - Definir el contrato para las operaciones CRUD de películas
- * - Abstraction de la persistencia de datos
+ * - Abstracción de la persistencia de datos
  * - Permitir diferentes implementaciones de persistencia
  * 
  * Patrón: Data Access Object (DAO)
