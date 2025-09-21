@@ -4,15 +4,44 @@ import dao.PeliculaDAO;
 import java.time.Year;
 import model.Pelicula;
 
+/**
+ * Servicio de aplicación para la gestión de películas
+ * 
+ * Responsabilidades:
+ * - Implementar la lógica de negocio
+ * - Validar datos antes de persistir
+ * - Coordinar operaciones con el DAO
+ * - Manejar excepciones de negocio
+ * 
+ */
+
 public class PeliculaService {
 
-    private final PeliculaDAO dao;
+    private final PeliculaDAO dao; // DAO para operaciones de persistencia
 
+    /**
+     * Constructor que inyecta el DAO
+     * 
+     * @param dao Implementación de PeliculaDAO
+     */
     public PeliculaService(PeliculaDAO dao) {
-        this.dao = dao;
+        this.dao = dao; 
     }
 
-    //Crear pelicula en BD
+    /**
+     * Crea una nueva película en la base de datos con validaciones de negocio
+     * 
+     * Validaciones implementadas:
+     * -Título no nulo y no vacío
+     * - Directo no nulo y no vacío
+     * - Año dentro de rango válido (1900 - año actual +1)
+     * - Duración dentro de rango válido (1-999 minutos)
+     * - Prevención de duplicados (título + año)
+     * 
+     * @param p Película a crear
+     * @return int ID generado por la base de datos
+     * @throws Exception Si falla validación o persistencia
+     */
     public int add(Pelicula p) throws Exception {
         // Validaciones de negocio (no en la vista)
         if (p.getTitulo() == null || p.getTitulo().isBlank()) {
@@ -30,10 +59,12 @@ public class PeliculaService {
         }
 
         try {
+            // Delegar la persistencia al DAO
             int id = dao.create(p);
             p.setId(id);
             return id;
         } catch (java.sql.SQLIntegrityConstraintViolationException dup) {
+            // Manejar violación del constraint única (título + año)
             throw new IllegalArgumentException("Ya existe una película con el mismo TÍTULO y AÑO.");
         }
     }
