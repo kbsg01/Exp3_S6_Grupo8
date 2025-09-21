@@ -22,7 +22,7 @@ public class PeliculaDAO implements IPeliculaDAO {
     /**
      * Crea una nueva película en la base de datos
      * 
-     * Carácteristicas:
+     * Características:
      * - Usa PreparedStatement para prevenir SQL injection
      * - Recupera el ID auto-generado
      * - Incluye fallback para compatibilidad con MariaDB
