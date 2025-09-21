@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * 
  * Responsabilidades:
  * - Proporcionar conexiones a la base de datos MySQL
- * - Centralizar la configuracion de conexión (URL, usuario, password)
+ * - Centralizar la configuración de conexión (URL, usuario, password)
  * - Verificar el estado de la conexión
  * - Implementar patrón Singleton para la configuración
  * 
