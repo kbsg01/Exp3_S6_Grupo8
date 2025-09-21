@@ -1,18 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- *
- * @author kabes
+ * Ventana principal de la aplicación de gestión cinematográfica
+ * 
+ * Responsabilidades:
+ * - Proporcionar el contenedor principal de la interfaz gráfica
+ * - Organizar los componentes visuales (toolbar, formulario)
+ * - Gestionar el layout de la aplicación
+ * - Proporcionar acceso a los componentes para el controlador
+ * 
+ * Características:
+ * - Diseño BorderLayout para organización flexible
+ * - Toolbar con acciones principales
+ * - Integración con PeliculaFormPanel
+ * - Tamaño y posición centrada por defecto
+ * 
  */
 public class MainFrame extends javax.swing.JFrame {
     
+    // Componentes de la interfaz
     private final JToolBar toolbar = new JToolBar();
     private final JButton btnAgregar = new JButton("Agregar");
 //    private final JButton btnModificar= new JButton("Modificar");
@@ -23,7 +32,14 @@ public class MainFrame extends javax.swing.JFrame {
     private final PeliculaFormPanel formPanel = new PeliculaFormPanel();
 
     /**
-     * Creates new form MainFrame
+     * Constructor de la ventana principal
+     * 
+     * Inicializa:
+     * - Título y propiedades de la ventana
+     * - Layout y organización de componentes
+     * - Toolbar con botones de acción
+     * - Formulario de películas
+     * 
      */
     public MainFrame() {
         super("Gestión Cine Magenta");
@@ -43,7 +59,14 @@ public class MainFrame extends javax.swing.JFrame {
         add(formPanel, BorderLayout.CENTER);
     }
     
+    /**
+     * @return JButton Botón de agregar película
+     */
     public JButton getBtnAgregar()     { return btnAgregar; }
+    
+    /**
+     * @return PeliculaFormPanel Panel del formulario de películas
+     */
     public PeliculaFormPanel getFormPanel(){ return formPanel; }
 
     /**
