@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * 
  * Características:
  * - Clase final para evitar herencia
- * - Contructor privado para evitar instanciación
+ * - Constructor privado para evitar instanciación
  * - Método estáticos para acceso global
  * 
  */
