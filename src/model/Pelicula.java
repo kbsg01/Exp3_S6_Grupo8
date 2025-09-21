@@ -44,7 +44,7 @@ public class Pelicula {
     }
     
     /**
-     * Constructor para nueva películas (sin ID)
+     * Constructor para nuevas películas (sin ID)
      * 
      * @param titulo Título de la película
      * @param director Director de la película
